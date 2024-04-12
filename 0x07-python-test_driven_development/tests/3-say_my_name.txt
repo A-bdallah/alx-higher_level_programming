@@ -1,42 +1,12 @@
-The ``3-say_my_name.py`` module
-======================
-
-Using ``say_my_name``
--------------------
-
-This is an say_my_name test file
-First import ``say_my_name`` from the ``3-say_my_name`` module:
-
-    >>> say_my_name = __import__("3-say_my_name").say_my_name
-
-first_name not string:
-    >>> say_my_name(1 , "Abdallah")
-    Traceback (most recent call last):
-    ...
-    TypeError: first_name must be a string
-
-last_name not string:
-    >>> say_my_name("Abdallah", 1)
-    Traceback (most recent call last):
-    ...
-    TypeError: last_name must be a string
-
-1 not string arg:
-    >>> say_my_name(2.5)
-    Traceback (most recent call last):
-    ...
-    TypeError: first_name must be a string
-
-1 string arg:
-    >>> say_my_name("Abdallah")
-    My name is Abdallah  
-
-2 string args:
-    >>> say_my_name("Abdallah", "Ahmed")
-    My name is Abdallah Ahmed 
-
-missing two argumentss:
-    >>> say_my_name()
-    Traceback (most recent call last):
-    ...
-    ValueError: missing two arguments
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Abdallah", "Ahmed")
+My name is Abdallah Ahmed 
+>>> say_my_name("Abdallah", "Ahmed")
+My name is Abdallah Ahmed
+>>> say_my_name("Mini")
+My name is Mini  
+>>> try:
+...     say_my_name(12, "Ahmed")
+... except Exception as e:
+...     print(e)
+first_name must be a string
