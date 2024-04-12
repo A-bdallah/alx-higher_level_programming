@@ -4,46 +4,29 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
-
 class TestMaxInteger(unittest.TestCase):
-    """
-    test class for the max_integer() function.
-    """
+    """ Unit test for max_integer """
+
+    def test_positive(self):
+        """ test positive values """
+        self.assertEqual(max_integer([50, 100, 25]), 100)
+
+    def test_negative(self):
+        """ test negative values """
+        self.assertEqual(max_integer([-50, -100, -25]), -25)
+
+    def test_mix(self):
+        """ test mix values """
+        self.assertEqual(max_integer([50, -100, 25]), 50)
 
     def test_empty_list(self):
-        """
-        Test that an empty list returns None.
-        """
-        self.assertIsNone(max_integer([]), "result should be none")
+        """ test empty list """
+        self.assertEqual(max_integer([]), None)
 
-    def test_only_one_element_in_list(self):
-        """
-        Test that an empty list returns None.
-        """
-        int_num = 20
-        self.assertAlmostEqual(max_integer(
-            [int_num]), int_num, f"result should be {int_num}")
+    def test_empty(self):
+        """ test empty"""
+        self.assertEqual(max_integer(), None)
 
-    def test_positives_list(self):
-        """
-        Test that an empty list returns None.
-        """
-        list_of_positives = [20, 300, 40, 50]
-        self.assertAlmostEqual(max_integer(
-            list_of_positives), 300, "result should be 300")
-
-    def test_negatives_list(self):
-        """
-        Test that an empty list returns None.
-        """
-        list_of_positives = [-20, -300, -40, -1]
-        self.assertAlmostEqual(max_integer(
-            list_of_positives), -1, "result should be -1")
-
-    def test_negatives_positives_list(self):
-        """
-        Test that an empty list returns None.
-        """
-        list_of_positives = [-20, 300, -40, 1]
-        self.assertAlmostEqual(max_integer(
-            list_of_positives), 300, "result should be 300")
+    def test_one(self):
+        """ test one element in list """
+        self.assertEqual(max_integer([5]), 5)
