@@ -1,2 +1,2 @@
 -- a script that lists all rows of the table first_table from the database hbtn_0c_0
-SHOW TABLE OF first_table WHERE hbtn_0c_0;
+ SHOW * SELECT hbtn_0c_0;
